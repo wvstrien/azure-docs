@@ -31,6 +31,9 @@ Yes. For more information about using the .csv file upload feature, see [this Po
 ### How can I customize my invitation emails?
 You can customize almost everything about the inviter process by using the [B2B invitation APIs](customize-invitation-api.md).
 
+### Can I avoid the need send guest invitation emails?
+Yes. The Azure AD B2B invitation experience is modified to avoid the need for explicit redemption before a guest is able to access a shared resource. Now on access it is checked whether redemption is already done, if not it needs to be done implicit as part of first access of the resource. See Enterprise Mobility and Security article [Exciting improvements to the B2B collaboration experience](https://cloudblogs.microsoft.com/enterprisemobility/2018/05/14/exciting-improvements-to-the-b2b-collaboration-experience/). Current the Azure Portal does not allow to skip sending the invitation emails, you must therefore use the [B2B invitation APIs](customize-invitation-api.md), New-AzureAMDSInvitation cmdlet.
+
 ### Can guest users reset their multi-factor authentication method?
 Yes. Guest users can reset their multi-factor authentication method the same way that regular users do.
 
@@ -102,6 +105,9 @@ If the partner has an Azure AD tenant that is federated to the on-premises authe
 
 ### I thought Azure AD B2B didn't accept gmail.com and outlook.com email addresses, and that B2C was used for those kinds of accounts?
 We are removing the differences between B2B and business-to-consumer (B2C) collaboration in terms of which identities are supported. The identity used is not a good reason to choose between using B2B or using B2C. For information about choosing your collaboration option, see [Compare B2B collaboration and B2C in Azure Active Directory](compare-with-b2c.md).
+
+### Can I invite identities from an [Azure Private Cloud](https://azure.microsoft.com/en-us/overview/what-is-a-private-cloud/)?
+No, this is current a known limitation. See Azure Article [Azure Germany security and identity services](https://docs.microsoft.com/en-us/azure/germany/germany-services-securityandidentity): Customers in Azure Germany cannot access resources that require a subscription or identity in global Azure.
 
 ### What applications and services support Azure B2B guest users?
 All Azure AD-integrated applications support Azure B2B guest users. 
